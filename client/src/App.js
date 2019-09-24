@@ -27,13 +27,13 @@ class App extends Component {
      callAPI() {
          var coin = this.state.coin;
          var currency = this.state.currency;
-        var url = `/api/compare/${coin}/${currency}/`;
+         var url = `/api/compare/${coin}/${currency}/`;
          fetch(url)
             .then(res => res.json())
             .then((data) => {
                 this.setState({ coinData: data })
             })
-            .catch(err => err);
+            .catch(err => console.error(err));
     }
 
     componentDidMount() {
