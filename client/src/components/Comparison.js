@@ -17,7 +17,7 @@ class Comparison extends Component {
             <div className="col-sm-10 offset-sm-1 mt-5">
 
                 <h1 className="text-center mb-3">{this.props.coinName} - {this.props.currencyName}</h1>
-                {JSON.stringify(this.props.coinData)}
+
                 {this.props.coinData.map((coin) => (
                     <div key="0">
                     <CardGroup>
