@@ -9,7 +9,7 @@ exports.platformsData = (req, res, next) => {
     if (coin === 'BTC') {krakencoin = 'XBT'}else{krakencoin = coin}
     if (currency === 'USD') {bittrexcurrency = 'USDT'}else{bittrexcurrency = currency}
 
-   /* function getData(url)
+    function getData(url)
     {
         return fetch(url, {
             headers: {
@@ -28,7 +28,7 @@ exports.platformsData = (req, res, next) => {
     }
     function getAllData(){
         return Promise.all([getData('https://api-pub.bitfinex.com/v2/ticker/t'+coin+currency), getData('https://www.bitstamp.net/api/v2/ticker/'+bitstampcoin+bitstampcurrency), getData('https://api.kraken.com/0/public/Ticker?pair='+krakencoin+currency), getData('https://api.bittrex.com/v3/markets/'+coin+'-'+bittrexcurrency+'/ticker'), getData('https://api.pro.coinbase.com/products/'+coin+'-'+currency+'/ticker')])
-    }*/
+    }
     let btc = [
         {
             bitfinex: {
@@ -59,7 +59,7 @@ exports.platformsData = (req, res, next) => {
             }
         }
     ];
-    /*getAllData()
+    getAllData()
         .then(([bodyBF, bodyBS, bodyK, bodyBT, bodyCB]) => {
 
             if (bodyBF != null) {
@@ -99,7 +99,7 @@ exports.platformsData = (req, res, next) => {
                 }
             }
             console.log(btc);
+            return res.status(200).json(btc);
+        });
 
-        });*/
-    return res.status(200).json(btc);
 };
