@@ -15,7 +15,6 @@ if (process.env.NODE_ENV === 'production') {
     app.get('*', (req,res) => {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
     })
-
 }
 
 app.get('/api/compare/:coin/:currency', (req,res) => {
@@ -23,28 +22,28 @@ app.get('/api/compare/:coin/:currency', (req,res) => {
         let btc = [
             {
                 bitfinex: {
-                    price: 0,
-                    bid: 0,
-                    ask: 0
+                    price: 1,
+                    bid: 1,
+                    ask: 1
                 },
                 bitstamp: {
-                    price: 0,
+                    price: 1,
                     bid: 0,
                     ask: 0
                 },
                 kraken: {
 
-                    price: 0,
+                    price: 1,
                     bid: 0,
                     ask: 0
                 },
                 bittrex: {
-                    price: 0,
+                    price: 1,
                     bid: 0,
                     ask: 0
                 },
                 coinbase: {
-                    price: 0,
+                    price: 1,
                     bid: 0,
                     ask: 0
                 }
