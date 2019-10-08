@@ -39,6 +39,10 @@ class App extends Component {
     componentDidMount() {
         this.callAPI();
         //this.timer = setInterval(()=> this.callAPI(), 60000);
+        /*setInterval(function() {
+            http.get("http://<your app name>.herokuapp.com");
+        }, 300000); // every 5 minutes (300000)
+        */
     }
 
     render() {
