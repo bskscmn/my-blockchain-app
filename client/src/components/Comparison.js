@@ -18,7 +18,7 @@ class Comparison extends Component {
                     <div key="0">
                         <div className="cards">
                             <Card>
-                                <a href="https://www.bitfinex.com/" rel="noopener noreferrer"><Card.Header><Card.Img variant="top" src="/images/bitfinex-logo.png" className="p-1"/></Card.Header></a>
+                                <Card.Header><a href="https://www.bitfinex.com/" rel="noopener noreferrer"><Card.Img variant="top" src="/images/bitfinex-logo.png" className="p-1"/></a></Card.Header>
                                 <Card.Body>
                                     <Card.Title><b>Price: </b> {coin.bitfinex.price}</Card.Title>
                                     <Card.Text>
@@ -28,7 +28,7 @@ class Comparison extends Component {
                                 </Card.Body>
                             </Card>
                             <Card>
-                            <a href="https://www.bitstamp.net/" rel="noopener noreferrer"><Card.Header><Card.Img variant="top" src="/images/bitstamp-logo.png" className="p-1"/></Card.Header></a>
+                            <Card.Header><a href="https://www.bitstamp.net/" rel="noopener noreferrer"><Card.Img variant="top" src="/images/bitstamp-logo.png" className="p-1"/></a></Card.Header>
                             <Card.Body>
                                 <Card.Title><b>Price: </b> {coin.bitstamp.price}</Card.Title>
                                 <Card.Text>
@@ -38,7 +38,7 @@ class Comparison extends Component {
                             </Card.Body>
                         </Card>
                             <Card>
-                                <a href="https://www.kraken.com/" rel="noopener noreferrer"><Card.Header><Card.Img variant="top" src="/images/kraken-logo.png" className="p-1"/></Card.Header></a>
+                                <Card.Header><a href="https://www.kraken.com/" rel="noopener noreferrer"><Card.Img variant="top" src="/images/kraken-logo.png" className="p-1"/></a></Card.Header>
                                 <Card.Body>
                                     <Card.Title><b>Price: </b> {coin.kraken.price}</Card.Title>
                                     <Card.Text>
@@ -48,7 +48,7 @@ class Comparison extends Component {
                                 </Card.Body>
                             </Card>
                             <Card>
-                                <a href="https://www.bittrex.com/" rel="noopener noreferrer"><Card.Header><Card.Img variant="top" src="/images/bittrex-logo.png" className="p-1"/></Card.Header></a>
+                               <Card.Header> <a href="https://www.bittrex.com/" rel="noopener noreferrer"><Card.Img variant="top" src="/images/bittrex-logo.png" className="p-1"/></a></Card.Header>
                                 <Card.Body>
                                     <Card.Title><b>Price: </b> {coin.bittrex.price}</Card.Title>
                                     <Card.Text>
@@ -58,7 +58,7 @@ class Comparison extends Component {
                                 </Card.Body>
                             </Card>
                             <Card>
-                                <a href="https://www.coinbase.com/" rel="noopener noreferrer"><Card.Header><Card.Img variant="top" src="/images/coinbase-logo.png" className="p-1"/></Card.Header></a>
+                                <Card.Header><a href="https://www.coinbase.com/" rel="noopener noreferrer"><Card.Img variant="top" src="/images/coinbase-logo.png" className="p-1"/></a></Card.Header>
                                 <Card.Body>
                                     <Card.Title><b>Price: </b> {coin.coinbase.price}</Card.Title>
                                     <Card.Text>
@@ -73,17 +73,17 @@ class Comparison extends Component {
                         <Table bordered size="sm" className={"text-center table-hover-cells"}>
                             <thead>
                                 <tr>
-                                    <th>Ask \ Bid</th>
-                                    <th>Bitfinex<br/>{coin.bitfinex.bid}</th>
-                                    <th>Bitstamp<br/>{coin.bitstamp.bid}</th>
-                                    <th>Kraken<br/>{coin.kraken.bid}</th>
-                                    <th>Bittrex<br/>{coin.bittrex.bid}</th>
-                                    <th>Coinbase<br/>{coin.coinbase.bid}</th>
+                                    <th><span className="table-corner-title">Ask \ Bid</span></th>
+                                    <th><span className="table-title">Bitfinex</span><br/>{coin.bitfinex.bid}</th>
+                                    <th><span className="table-title">Bitstamp</span><br/>{coin.bitstamp.bid}</th>
+                                    <th><span className="table-title">Kraken</span><br/>{coin.kraken.bid}</th>
+                                    <th><span className="table-title">Bittrex</span><br/>{coin.bittrex.bid}</th>
+                                    <th><span className="table-title">Coinbase</span><br/>{coin.coinbase.bid}</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th scope="row">Bitfinex<br/>{coin.bitfinex.ask}</th>
+                                    <th scope="row"><span className="table-title">Bitfinex</span><br/>{coin.bitfinex.ask}</th>
                                     <td className={"align-middle"}>{this.difference(coin.bitfinex.ask, coin.bitfinex.bid)}</td>
                                     <td className={"align-middle"}>{this.difference(coin.bitfinex.ask, coin.bitstamp.bid)}</td>
                                     <td className={"align-middle"}>{this.difference(coin.bitfinex.ask, coin.kraken.bid)}</td>
@@ -91,7 +91,7 @@ class Comparison extends Component {
                                     <td className={"align-middle"}>{this.difference(coin.bitfinex.ask, coin.coinbase.bid)}</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">Bitstamp<br/>{coin.bitstamp.ask}</th>
+                                    <th scope="row"><span className="table-title">Bitstamp</span><br/>{coin.bitstamp.ask}</th>
                                     <td className={"align-middle"}>{this.difference(coin.bitstamp.ask, coin.bitfinex.bid)}</td>
                                     <td className={"align-middle"}>{this.difference(coin.bitstamp.ask, coin.bitstamp.bid)}</td>
                                     <td className={"align-middle"}>{this.difference(coin.bitstamp.ask, coin.kraken.bid)}</td>
@@ -99,7 +99,7 @@ class Comparison extends Component {
                                     <td className={"align-middle"}>{this.difference(coin.bitstamp.ask, coin.coinbase.bid)}</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">Kraken<br/>{coin.kraken.ask}</th>
+                                    <th scope="row"><span className="table-title">Kraken</span><br/>{coin.kraken.ask}</th>
                                     <td className={"align-middle"}>{this.difference(coin.kraken.ask, coin.bitfinex.bid)}</td>
                                     <td className={"align-middle"}>{this.difference(coin.kraken.ask, coin.bitstamp.bid)}</td>
                                     <td className={"align-middle"}>{this.difference(coin.kraken.ask, coin.kraken.bid)}</td>
@@ -107,7 +107,7 @@ class Comparison extends Component {
                                     <td className={"align-middle"}>{this.difference(coin.kraken.ask, coin.coinbase.bid)}</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">Bittrex<br/>{coin.bittrex.ask}</th>
+                                    <th scope="row"><span className="table-title">Bittrex</span><br/>{coin.bittrex.ask}</th>
                                     <td className={"align-middle"}>{this.difference(coin.bittrex.ask, coin.bitfinex.bid)}</td>
                                     <td className={"align-middle"}>{this.difference(coin.bittrex.ask, coin.bitstamp.bid)}</td>
                                     <td className={"align-middle"}>{this.difference(coin.bittrex.ask, coin.kraken.bid)}</td>
@@ -115,7 +115,7 @@ class Comparison extends Component {
                                     <td className={"align-middle"}>{this.difference(coin.bittrex.ask, coin.coinbase.bid)}</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">Coinbase<br/>{coin.coinbase.ask}</th>
+                                    <th scope="row"><span className="table-title">Coinbase</span><br/>{coin.coinbase.ask}</th>
                                     <td className={"align-middle"}>{this.difference(coin.coinbase.ask, coin.bitfinex.bid)}</td>
                                     <td className={"align-middle"}>{this.difference(coin.coinbase.ask, coin.bitstamp.bid)}</td>
                                     <td className={"align-middle"}>{this.difference(coin.coinbase.ask, coin.kraken.bid)}</td>

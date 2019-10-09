@@ -9,7 +9,7 @@ body {
   background-image: linear-gradient(135deg, #00162c, #0b3854);
   color: white;}
 .bg-dark {
-  background: #101b32 !important;
+  background: #032037 !important;
 }
 .App {
 
@@ -97,17 +97,38 @@ a .card-header:hover {
 .table th, .table td {
   border: 1px solid #1364a2 !important;
 }
+.table-title{
+  color: #c4019d;
+}
+.table-corner-title{
+  color: #a0bad7;
+}
 thead tr:first-child {
   border-bottom: 2px solid #7e256c !important;
+  background-color: #86b7ef14;
+
 }
 thead th:first-child {
   border-right: 2px solid #7e256c !important;
 }
 tbody th:first-child{
   border-right: 2px solid #7e256c !important;
+  background-color: #86b7ef14;
 }
 .custom-select {
   color: #fff;
   background-color: #7e256c;
   border: 1px solid #450337;
+}
+.custom-select:focus {
+  border-color: #c53aa9;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(102, 33, 85, 0.67);
+}
+select option:checked,
+select option:hover {
+  box-shadow: 0 0 10px 100px #54193d inset;
+}
+select:focus > option:checked {
+  background: #54193d !important;
 }
