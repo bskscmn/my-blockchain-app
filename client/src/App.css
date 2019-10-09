@@ -60,7 +60,6 @@ a .card-header:hover {
 .cards {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
   border-radius: 5px;
   margin-bottom: 10px;
   border: 1px solid #1364a2;
