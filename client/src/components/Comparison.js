@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Card, CardGroup, Table} from "react-bootstrap";
+import {Table} from "react-bootstrap";
 
 class Comparison extends Component {
     difference(ask, bid) {
@@ -16,62 +16,52 @@ class Comparison extends Component {
 
                 {this.props.coinData.map((coin) => (
                     <div key="0">
-                        <div className="cards">
-                            <Card>
-                                <Card.Header><a href="https://www.bitfinex.com/" rel="noopener noreferrer"><Card.Img variant="top" src="/images/bitfinex-logo.png" className="p-1"/></a></Card.Header>
-                                <Card.Body>
-                                    <Card.Title><b>Price: </b> {coin.bitfinex.price}</Card.Title>
-                                    <Card.Text>
+
+                        <Table id="table1" bordered size="sm" className={"text-center table-hover-cells"}>
+                                <thead>
+                                <tr className={"table-hover-cells"}>
+                                    <th><span className="table1-header"><a href="https://www.bitfinex.com/" rel="noopener noreferrer"><img variant="top" src="/images/bitfinex-icon.png" className="p-1"/>Bitfinex</a></span><br/></th>
+                                    <th><span className="table1-header"><a href="https://www.bitstamp.net/" rel="noopener noreferrer"><img variant="top" src="/images/bitstamp-icon.png" className="p-1"/>Bitstamp</a></span><br/></th>
+                                    <th><span className="table1-header"><a href="https://www.kraken.com/" rel="noopener noreferrer"><img variant="top" src="/images/kraken-icon.png" className="p-1"/>Kraken</a></span><br/></th>
+                                    <th><span className="table1-header"><a href="https://www.bittrex.com/" rel="noopener noreferrer"><img variant="top" src="/images/bittrex-icon.png" className="p-1"/>Bittrex</a></span></th>
+                                    <th><span className="table1-header"><a href="https://www.coinbase.com/" rel="noopener noreferrer"><img variant="top" src="/images/coinbase-icon.png" className="p-1"/>Coinbase</a></span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td className={"align-middle"}>
+                                        <b>Price: </b> {coin.bitfinex.price} <br/>
                                         <b>Ask: </b> {coin.bitfinex.ask} <br/>
-                                        <b>Bid: </b> {coin.bitfinex.bid}
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                            <Card>
-                            <Card.Header><a href="https://www.bitstamp.net/" rel="noopener noreferrer"><Card.Img variant="top" src="/images/bitstamp-logo.png" className="p-1"/></a></Card.Header>
-                            <Card.Body>
-                                <Card.Title><b>Price: </b> {coin.bitstamp.price}</Card.Title>
-                                <Card.Text>
-                                    <b>Ask: </b> {coin.bitstamp.ask} <br/>
-                                    <b>Bid: </b> {coin.bitstamp.bid}
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                            <Card>
-                                <Card.Header><a href="https://www.kraken.com/" rel="noopener noreferrer"><Card.Img variant="top" src="/images/kraken-logo.png" className="p-1"/></a></Card.Header>
-                                <Card.Body>
-                                    <Card.Title><b>Price: </b> {coin.kraken.price}</Card.Title>
-                                    <Card.Text>
+                                        <b>Bid: </b> {coin.bitfinex.bid} <br/>
+                                    </td>
+                                    <td className={"align-middle"}>
+                                        <b>Price: </b> {coin.bitstamp.price} <br/>
+                                        <b>Ask: </b> {coin.bitstamp.ask} <br/>
+                                        <b>Bid: </b> {coin.bitstamp.bid} <br/>
+                                    </td>
+                                    <td className={"align-middle"}>
+                                        <b>Price: </b> {coin.kraken.price} <br/>
                                         <b>Ask: </b> {coin.kraken.ask} <br/>
-                                        <b>Bid: </b> {coin.kraken.bid}
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                            <Card>
-                               <Card.Header> <a href="https://www.bittrex.com/" rel="noopener noreferrer"><Card.Img variant="top" src="/images/bittrex-logo.png" className="p-1"/></a></Card.Header>
-                                <Card.Body>
-                                    <Card.Title><b>Price: </b> {coin.bittrex.price}</Card.Title>
-                                    <Card.Text>
+                                        <b>Bid: </b> {coin.kraken.bid} <br/>
+                                    </td>
+                                    <td className={"align-middle"}>
+                                        <b>Price: </b> {coin.bittrex.price} <br/>
                                         <b>Ask: </b> {coin.bittrex.ask} <br/>
-                                        <b>Bid: </b> {coin.bittrex.bid}
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                            <Card>
-                                <Card.Header><a href="https://www.coinbase.com/" rel="noopener noreferrer"><Card.Img variant="top" src="/images/coinbase-logo.png" className="p-1"/></a></Card.Header>
-                                <Card.Body>
-                                    <Card.Title><b>Price: </b> {coin.coinbase.price}</Card.Title>
-                                    <Card.Text>
+                                        <b>Bid: </b> {coin.bittrex.bid} <br/>
+                                    </td>
+                                    <td className={"align-middle"}>
+                                        <b>Price: </b> {coin.coinbase.price} <br/>
                                         <b>Ask: </b> {coin.coinbase.ask} <br/>
-                                        <b>Bid: </b> {coin.coinbase.bid}
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </div>
+                                        <b>Bid: </b> {coin.coinbase.bid} <br/>
+                                    </td>
+                                </tr>
+
+                                </tbody>
+                            </Table>
 
                         <br/><h3 className="text-center mt-3">ASK - BID Difference</h3><br/>
-                        <Table bordered size="sm" className={"text-center table-hover-cells"}>
-                            <thead>
+                        <Table id="table2" bordered size="sm" className={"text-center"}>
+                            <thead className={"table-hover-cells"}>
                                 <tr>
                                     <th><span className="table-corner-title">Ask \ Bid</span></th>
                                     <th><span className="table-title">Bitfinex</span><br/>{coin.bitfinex.bid}</th>
@@ -81,7 +71,7 @@ class Comparison extends Component {
                                     <th><span className="table-title">Coinbase</span><br/>{coin.coinbase.bid}</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody className={"table-hover-cells"}>
                                 <tr>
                                     <th scope="row"><span className="table-title">Bitfinex</span><br/>{coin.bitfinex.ask}</th>
                                     <td className={"align-middle"}>{this.difference(coin.bitfinex.ask, coin.bitfinex.bid)}</td>
