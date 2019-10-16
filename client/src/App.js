@@ -54,7 +54,7 @@ class App extends Component {
 
             canvas = document.getElementById('animation-canvas');
             canvas.width = width;
-            canvas.height = height;
+            canvas.height = height*2;
             ctx = canvas.getContext('2d');
 
             // create points
@@ -237,7 +237,7 @@ class App extends Component {
         return (
             <div className = "App">
                 <Header />
-                <div id="animation" className="animation">
+                <div id="animation" className="animation" >
                     <canvas id="animation-canvas"></canvas>
                     <div className="data-container">
                         <Filter
