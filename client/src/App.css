@@ -34,12 +34,14 @@ body {
 .animation {
   position: relative;
   width: 100%;
-  overflow: hidden;
+  overflow: scroll;
   background-size: cover;
   background-position: center center;
   z-index: 1;
 }
-
+#canvas{
+  width: 100%;
+}
 #animation-canvas {
   display: inline-block;
   width: 100%;
