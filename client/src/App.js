@@ -224,7 +224,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        //this.handleAnimation();
+        this.handleAnimation();
         this.callAPI();
         //this.timer = setInterval(()=> this.callAPI(), 60000);
         /*setInterval(function() {
