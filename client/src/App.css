@@ -1,6 +1,4 @@
 body {
-
-
   background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0, #003073), color-stop(100%, #029797));
   background-image: -webkit-linear-gradient(135deg, #00162c, #0b3854);
   background-image: -moz-linear-gradient(45deg, #00162c, #0b3854);
@@ -33,7 +31,25 @@ body {
     transform: rotate(360deg);
   }
 }
+.animation {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+  z-index: 1;
+}
 
+#animation-canvas {
+  display: inline-block;
+  width: 100%;
+}
+.data-container {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
 .custom-select {
   color: #fff;
   background-color: #7e256c;
@@ -72,6 +88,7 @@ select:focus > option:checked {
   width: 100%;
   margin-bottom: 1rem;
   color: #3695de;
+  background-color: #042139;
 }
 
 #table1 a{
@@ -94,6 +111,7 @@ select:focus > option:checked {
   width: 100%;
   margin-bottom: 1rem;
   color: #3695de;
+  background-color: #042139;
 }
 
 #table2 .table-title{

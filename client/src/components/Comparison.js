@@ -20,11 +20,11 @@ class Comparison extends Component {
                         <Table id="table1" bordered size="sm" className={"text-center table-hover-cells"}>
                                 <thead>
                                 <tr className={"table-hover-cells"}>
-                                    <th><span className="table1-header"><a href="https://www.bitfinex.com/" rel="noopener noreferrer"><img variant="top" src="/images/bitfinex-icon.png" className="p-1"/>Bitfinex</a></span><br/></th>
-                                    <th><span className="table1-header"><a href="https://www.bitstamp.net/" rel="noopener noreferrer"><img variant="top" src="/images/bitstamp-icon.png" className="p-1"/>Bitstamp</a></span><br/></th>
-                                    <th><span className="table1-header"><a href="https://www.kraken.com/" rel="noopener noreferrer"><img variant="top" src="/images/kraken-icon.png" className="p-1"/>Kraken</a></span><br/></th>
-                                    <th><span className="table1-header"><a href="https://www.bittrex.com/" rel="noopener noreferrer"><img variant="top" src="/images/bittrex-icon.png" className="p-1"/>Bittrex</a></span></th>
-                                    <th><span className="table1-header"><a href="https://www.coinbase.com/" rel="noopener noreferrer"><img variant="top" src="/images/coinbase-icon.png" className="p-1"/>Coinbase</a></span></th>
+                                    <th><span className="table1-header"><a href="https://www.bitfinex.com/" rel="noopener noreferrer"><img variant="top" src="/images/bitfinex-icon.png" alt="bitfinex"/>Bitfinex</a></span><br/></th>
+                                    <th><span className="table1-header"><a href="https://www.bitstamp.net/" rel="noopener noreferrer"><img variant="top" src="/images/bitstamp-icon.png" alt="bitstamp"/>Bitstamp</a></span><br/></th>
+                                    <th><span className="table1-header"><a href="https://www.kraken.com/" rel="noopener noreferrer"><img variant="top" src="/images/kraken-icon.png" alt="kraken"/>Kraken</a></span><br/></th>
+                                    <th><span className="table1-header"><a href="https://www.bittrex.com/" rel="noopener noreferrer"><img variant="top" src="/images/bittrex-icon.png" alt="bittrex"/>Bittrex</a></span></th>
+                                    <th><span className="table1-header"><a href="https://www.coinbase.com/" rel="noopener noreferrer"><img variant="top" src="/images/coinbase-icon.png" alt="coinbase"/>Coinbase</a></span></th>
                                 </tr>
                                 </thead>
                                 <tbody>
