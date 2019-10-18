@@ -225,6 +225,28 @@ class App extends Component {
 
     }
 
+    handleTableColoring() {
+
+        var cells = document.getElementById('table2').getElementsByTagName('td'),
+            i = -1,j = -1, biggestVal = 0;
+
+        while(++i < cells.length){
+            let val = parseFloat(cells[i].innerHTML);
+            if(val > biggestVal){ biggestVal = val; }
+
+            cells[i].style.backgroundColor = val <= 0? "" :"#890268" ;
+            cells[i].style.color = val <= 0? "" : "#93b9d6" ;
+        }
+
+        while(++j < cells.length){
+            let val = parseFloat(cells[j].innerHTML);
+            if(val === biggestVal){
+                cells[j].style.color = "white"  ;
+            }
+
+        }
+    }
+
     componentDidMount() {
         this.handleAnimation();
         this.callAPI();
@@ -234,6 +256,9 @@ class App extends Component {
         }, 300000); // every 5 minutes (300000)
         */
 
+    }
+    componentDidUpdate() {
+        this.handleTableColoring();
     }
 
     render() {
