@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Comparison from "./components/Comparison";
 import Filter from "./components/Filter";
 
+
 class App extends Component {
     constructor(props) {
         super(props);
@@ -38,7 +39,7 @@ class App extends Component {
 
     handleAnimation() {
 
-        var width, height, animationArea, canvas, ctx, points, target, animateHeader = true;
+        var width, height, dataContainer, animationArea, canvas, ctx, points, target, animateHeader = true;
 
         // Main
         initHeader();
@@ -46,16 +47,18 @@ class App extends Component {
         addListeners();
         function initHeader() {
             width = window.innerWidth;
-            height = window.innerHeight;
+            height = window.innerHeight+60;
             target = {x: width/2, y: height/2};
+            dataContainer = document.getElementById("data-container")
 
             animationArea = document.getElementById('animation');
             animationArea.style.height = height+'px';
 
             canvas = document.getElementById('animation-canvas');
             canvas.width = width;
-            canvas.height = height*2;
+            canvas.height = height;
             ctx = canvas.getContext('2d');
+
 
             // create points
             points = [];
@@ -112,6 +115,7 @@ class App extends Component {
             }
             window.addEventListener('scroll', scrollCheck);
             window.addEventListener('resize', resize);
+            dataContainer.addEventListener('resize', dataResize);
         }
 
         function mouseMove(e) {
@@ -137,7 +141,15 @@ class App extends Component {
 
         function resize() {
             width = window.innerWidth;
-            height = window.innerHeight;
+            height = window.innerHeight+60;
+            animationArea.style.height = height+'px';
+            canvas.width = width;
+            canvas.height = height;
+            alert(height);
+        }
+        function dataResize() {
+            width = dataContainer.clientWidth;
+            height = dataContainer.clientHeight;
             animationArea.style.height = height+'px';
             canvas.width = width;
             canvas.height = height;
@@ -231,6 +243,7 @@ class App extends Component {
             http.get("http://<your app name>.herokuapp.com");
         }, 300000); // every 5 minutes (300000)
         */
+
     }
 
     render() {
@@ -239,7 +252,7 @@ class App extends Component {
                 <Header />
                 <div id="animation" className="animation" >
                     <canvas id="animation-canvas"></canvas>
-                    <div className="data-container">
+                    <div id="data-container">
                         <Filter
                             coin={this.state.coin}
                             currency={this.state.currency}
