@@ -39,7 +39,7 @@ class App extends Component {
 
     handleAnimation() {
 
-        var width, height, dataContainer, animationArea, canvas, ctx, points, target, animateHeader = true;
+        var width, height, animationArea, canvas, ctx, points, target, animateHeader = true;
 
         // Main
         initHeader();
@@ -49,7 +49,6 @@ class App extends Component {
             width = window.innerWidth;
             height = window.innerHeight+60;
             target = {x: width/2, y: height/2};
-            dataContainer = document.getElementById("data-container")
 
             animationArea = document.getElementById('animation');
             animationArea.style.height = height+'px';
@@ -115,7 +114,6 @@ class App extends Component {
             }
             window.addEventListener('scroll', scrollCheck);
             window.addEventListener('resize', resize);
-            dataContainer.addEventListener('resize', dataResize);
         }
 
         function mouseMove(e) {
@@ -142,14 +140,6 @@ class App extends Component {
         function resize() {
             width = window.innerWidth;
             height = window.innerHeight+60;
-            animationArea.style.height = height+'px';
-            canvas.width = width;
-            canvas.height = height;
-            alert(height);
-        }
-        function dataResize() {
-            width = dataContainer.clientWidth;
-            height = dataContainer.clientHeight;
             animationArea.style.height = height+'px';
             canvas.width = width;
             canvas.height = height;
