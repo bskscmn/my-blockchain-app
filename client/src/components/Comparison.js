@@ -59,7 +59,7 @@ class Comparison extends Component {
                                 </tbody>
                             </Table>
 
-                        <br/><h3 className="text-center mt-3">ASK - BID Difference</h3><br/>
+                        <br/><h3 className="text-center mt-3">BID - ASK Difference</h3><br/>
                         <Table id="table2" bordered size="sm" className={"text-center"}>
                             <thead className={"table-hover-cells"}>
                                 <tr>
@@ -118,7 +118,15 @@ class Comparison extends Component {
 
                 ))}
                 <hr/>
+                *Table gives bid - ask difference for each column and row.<hr/>
                 <p><strong>Raw data:</strong> {JSON.stringify(this.props.coinData)}</p>
+                <p><strong>API Links:</strong> </p>
+                <p>https://api-pub.bitfinex.com<br/>
+                    https://www.bitstamp.net/api<br/>
+                    https://api.kraken.com<br/>
+                    https://api.bittrex.com<br/>
+                    https://api.pro.coinbase.com<br/>
+                </p>
             </div>
         );
     }
