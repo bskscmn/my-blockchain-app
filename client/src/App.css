@@ -115,7 +115,10 @@ select:focus > option:checked {
   color: #3695de;
   background-color: #042139;
 }
-
+.th-diagonal{
+  background-color: #013A6B;
+  background-image: -webkit-linear-gradient(60deg, #013A6B 50%, #074983 50%);
+}
 #table2 .table-title{
   color: #c4019d;
 }

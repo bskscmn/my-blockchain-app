@@ -63,7 +63,7 @@ class Comparison extends Component {
                         <Table id="table2" bordered size="sm" className={"text-center"}>
                             <thead className={"table-hover-cells"}>
                                 <tr>
-                                    <th><span className="table-corner-title">Ask \ Bid</span></th>
+                                    <th className="th-diagonal"><span className="table-corner-title"><span className="pull-right pr-2"> Bid</span><br/><span className="pull-left pl-2">Ask</span></span></th>
                                     <th><span className="table-title">Bitfinex</span><br/>{coin.bitfinex.bid}</th>
                                     <th><span className="table-title">Bitstamp</span><br/>{coin.bitstamp.bid}</th>
                                     <th><span className="table-title">Kraken</span><br/>{coin.kraken.bid}</th>
