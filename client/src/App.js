@@ -282,7 +282,7 @@ class App extends Component {
                     <canvas id="animation-canvas"></canvas>
                     <div id="data-container">
                         <div className="pull-right">
-                            <span className="pr-3">Auto Refresh evey minute:</span> <br/>
+                            <span className="pr-3">Auto-refresh every minute:</span> <br/>
                             <input type="checkbox" checked={this.state.refresh}
                                    onChange={this.handleRefresh} id='heat'/>
 
