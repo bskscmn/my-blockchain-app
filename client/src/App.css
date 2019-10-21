@@ -138,3 +138,50 @@ select:focus > option:checked {
   background-color: #86b7ef14;
 }
 
+#heat {
+  position: absolute;
+  left: -100vw;
+}
+input:checked + label {
+  --s: 1 ;
+}
+
+label {
+  --s: 0;
+  display: block;
+  position: relative;
+  --c: #d425a9;
+  padding: 2px 6px;
+  filter: blur(0.5px);
+  cursor: pointer;
+}
+label, label:before {
+  border: solid 0.21em transparent;
+  width:5.5em;
+  height: 2.525em;
+  border-radius: 1.3125em;
+  box-shadow: inset 0 0.1em 0.7em rgba(0, 0, 0, 0.5);
+  background:  linear-gradient(transparent, rgba(0, 0, 0, 0.32)) padding-box, linear-gradient(var(--c), var(--c)) padding-box, linear-gradient(#001322, #0e4672) border-box;
+}
+label:before, label:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+}
+label:before {
+  margin: -0.2125em;
+  opacity: calc(1 - var(--s));
+  --c: #032037;
+  transition: .2s opacity;
+}
+label:after {
+  border: solid 3px transparent;
+  width: 2.4875em;
+  height: 2em;
+  border-radius: 1em;
+  transform: translate(calc(var(--s)*100%));
+  box-shadow: 0 2px 9px rgba(0, 0, 0, 0.8);
+  background: linear-gradient(#aab6d1, #edede9) padding-box, linear-gradient(#fcfcfc, #b2b2b2) border-box;
+  transition: .2s transform ease-in;
+}

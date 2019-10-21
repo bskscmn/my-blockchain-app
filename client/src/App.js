@@ -12,7 +12,8 @@ class App extends Component {
             coin: 'BTC',
             currency: 'USD',
             coinData: [],
-            time: Date.now()
+            time: Date.now(),
+            refresh: false
         };
 
     }
@@ -35,6 +36,20 @@ class App extends Component {
                 this.setState({ coinData: data })
             })
             .catch(err => console.error(err));
+    }
+
+    handleRefresh = (event) => {
+        this.setState(prevState => ({
+            refresh: !prevState.refresh
+        }),()=>{this.refreshPage()});
+
+    }
+    refreshPage () {
+        if(this.state.refresh === true){
+            this.timer = setInterval(()=> this.callAPI(), 60000);
+        }else{
+            clearInterval(this.timer);
+        }
     }
 
     handleAnimation() {
@@ -226,35 +241,33 @@ class App extends Component {
     }
 
     handleTableColoring() {
+        var table = document.getElementById('table2');
+        if (table != null){
+            var cells = table.getElementsByTagName('td'),
+                i = -1,j = -1, biggestVal = 0;
 
-        var cells = document.getElementById('table2').getElementsByTagName('td'),
-            i = -1,j = -1, biggestVal = 0;
+            while(++i < cells.length){
+                let val = parseFloat(cells[i].innerHTML);
+                if(val > biggestVal){ biggestVal = val; }
 
-        while(++i < cells.length){
-            let val = parseFloat(cells[i].innerHTML);
-            if(val > biggestVal){ biggestVal = val; }
-
-            cells[i].style.backgroundColor = val <= 0? "" :"#890268" ;
-            cells[i].style.color = val <= 0? "" : "#93b9d6" ;
-        }
-
-        while(++j < cells.length){
-            let val = parseFloat(cells[j].innerHTML);
-            if(val === biggestVal){
-                cells[j].style.color = "white"  ;
+                cells[i].style.backgroundColor = val <= 0? "" :"#890268" ;
+                cells[i].style.color = val <= 0? "" : "#93b9d6" ;
             }
 
+            while(++j < cells.length){
+                let val = parseFloat(cells[j].innerHTML);
+                if(val === biggestVal){
+                    cells[j].style.color = "white"  ;
+                }
+
+            }
         }
+
     }
 
     componentDidMount() {
         this.handleAnimation();
         this.callAPI();
-        //this.timer = setInterval(()=> this.callAPI(), 60000);
-        /*setInterval(function() {
-            http.get("http://<your app name>.herokuapp.com");
-        }, 300000); // every 5 minutes (300000)
-        */
 
     }
     componentDidUpdate() {
@@ -268,6 +281,14 @@ class App extends Component {
                 <div id="animation" className="animation" >
                     <canvas id="animation-canvas"></canvas>
                     <div id="data-container">
+                        <div className="pull-right">
+                            <span className="pr-3">Auto Refresh evey minute:</span> <br/>
+                            <input type="checkbox" checked={this.state.refresh}
+                                   onChange={this.handleRefresh} id='heat'/>
+
+                            <label htmlFor='heat'>ON</label>
+                        </div>
+
                         <Filter
                             coin={this.state.coin}
                             currency={this.state.currency}
